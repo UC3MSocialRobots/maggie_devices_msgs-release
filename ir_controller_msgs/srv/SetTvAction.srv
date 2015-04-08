@@ -1,7 +1,0 @@
-#
-# Send a command by the ir controller
-#
-
-string remote
-string command
----
