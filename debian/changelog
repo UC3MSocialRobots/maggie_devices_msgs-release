@@ -1,0 +1,13 @@
+ros-hydro-maggie-eyelids-msgs (0.0.2-0quantal) quantal; urgency=high
+
+  Updated with ROS name convention.
+
+ -- Raul Perula-Martinez <raul.perula@uc3m.es>  Sun, 12 Apr 2015 22:00:00 -0000
+
+ros-hydro-maggie-eyelids-msgs (0.0.1-0quantal) quantal; urgency=high
+
+  Initial release.
+
+ -- Raul Perula-Martinez <raul.perula@uc3m.es>  Tue, 07 Apr 2015 22:00:00 -0000
+
+
