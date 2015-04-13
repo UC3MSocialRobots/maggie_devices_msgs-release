@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(eyelids_msgs)
+project(maggie_ir_controller_msgs)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS message_generation)
@@ -12,14 +12,15 @@ find_package(catkin REQUIRED COMPONENTS message_generation)
 add_message_files(
     DIRECTORY msg
     FILES
-    EyelidPositions.msg
+    GetTvAction.msg
+    TvActions.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
     DIRECTORY srv
     FILES
-    MoveStrPos.srv
+    SetTvAction.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -31,9 +32,9 @@ generate_messages()
 
 ## The catkin_package macro generates cmake config files for your package
 catkin_package(
-    INCLUDE_DIRS
+    INCLUDE_DIRS 
     CATKIN_DEPENDS message_runtime
-    DEPENDS
+    DEPENDS 
 )
 
 ###########

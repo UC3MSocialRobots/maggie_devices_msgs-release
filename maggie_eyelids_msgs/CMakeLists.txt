@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rfid_msgs)
+project(maggie_eyelids_msgs)
 
 ## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS std_msgs message_generation)
+find_package(catkin REQUIRED COMPONENTS message_generation)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -12,21 +12,18 @@ find_package(catkin REQUIRED COMPONENTS std_msgs message_generation)
 add_message_files(
     DIRECTORY msg
     FILES
-    RfidTag.msg
+    EyelidPositions.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
     DIRECTORY srv
     FILES
-    WriteCard.srv
+    MoveStrPos.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-    DEPENDENCIES
-    std_msgs
-)
+generate_messages()
 
 ###################################
 ## catkin specific configuration ##
