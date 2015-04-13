@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ir_controller_msgs)
+project(maggie_motor_controller_msgs)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS message_generation)
@@ -12,15 +12,16 @@ find_package(catkin REQUIRED COMPONENTS message_generation)
 add_message_files(
     DIRECTORY msg
     FILES
-    GetTvAction.msg
-    TvActions.msg
+    Data.msg
+    Odometry.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
     DIRECTORY srv
     FILES
-    SetTvAction.srv
+    Configuration.srv
+    MoveAbsPos.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -32,9 +33,9 @@ generate_messages()
 
 ## The catkin_package macro generates cmake config files for your package
 catkin_package(
-    INCLUDE_DIRS 
+    INCLUDE_DIRS
     CATKIN_DEPENDS message_runtime
-    DEPENDS 
+    DEPENDS
 )
 
 ###########
@@ -56,7 +57,7 @@ include_directories(
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
 ## Mark cpp header files for installation
-install(DIRECTORY include/${PROJECT_NAME}/
+install(DIRECTORY src/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
     FILES_MATCHING PATTERN "*.h"
     PATTERN ".svn" EXCLUDE

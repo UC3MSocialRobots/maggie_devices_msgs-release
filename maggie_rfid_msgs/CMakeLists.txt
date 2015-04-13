@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(motor_controller_msgs)
+project(maggie_rfid_msgs)
 
 ## Find catkin macros and libraries
-find_package(catkin REQUIRED COMPONENTS message_generation)
+find_package(catkin REQUIRED COMPONENTS std_msgs message_generation)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -12,20 +12,21 @@ find_package(catkin REQUIRED COMPONENTS message_generation)
 add_message_files(
     DIRECTORY msg
     FILES
-    Data.msg
-    Odometry.msg
+    RfidTag.msg
 )
 
 ## Generate services in the 'srv' folder
 add_service_files(
     DIRECTORY srv
     FILES
-    Configuration.srv
-    MoveAbsPos.srv
+    WriteCard.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages()
+generate_messages(
+    DEPENDENCIES
+    std_msgs
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -57,7 +58,7 @@ include_directories(
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
 
 ## Mark cpp header files for installation
-install(DIRECTORY src/
+install(DIRECTORY include/${PROJECT_NAME}/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
     FILES_MATCHING PATTERN "*.h"
     PATTERN ".svn" EXCLUDE

@@ -1,6 +1,6 @@
-# eyelids_msgs
+# maggie_rfid_msgs
 
-ROS package for the messages of the eyelids device for the Social Robot Maggie.
+ROS package for the messages of the RFID device for the Social Robot Maggie.
 
 ## LICENSE
 
